@@ -7,11 +7,10 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
 
     <style>
-        .principal{
-            margin: top;
-        }
+     .principal{
+        margin-top: 20px;
+     }
     </style>
-
 </head>
 
 <body>
@@ -25,63 +24,58 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Produtoss
+                    <a class="nav-link" href="#">Produtos
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-
+                
             </ul>
-
+            
         </div>
     </nav>
 
     <div class="container principal">
         <div class="row">
             <div class="col-md-4">
-
-                <div class="card">
+                
+                <div class="card">                    
                     <div class="card-body">
-                      <div class="col-md-4">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">#</span>
-                                </div>
-                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-info">+</button>
-
-                                </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">#</span>
                             </div>
-                            <!-- Fim do input-->
+                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <button class="btn btn-info">+</button>
+                            </div>
+                        </div> <!-- fim do input-->
 
-                            <button type="button" class="btn btn-primary  btn block">Finalizar</button>
-                            <button type="button" class="btn btn-warning  btn block">Estornar</button>
-                            <button type="button" class="btn btn-danger  btn block">Cancelar</button>
-                     </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Fim do Card-->
-
-
-                <div class="col-md-8">
-                    <div class="card bg-light mb-3">
-                        <div class="card-header">Lista de Produtos</div>
-                        <div class="card-body">
-                            <ul>
-                                <li>Produto nome -- Quant: 2 -- R$ 123,99 </li>
-                                <li>Produto nome -- Quant: 2 -- R$ 123,99 </li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            Total a Pagar: xxx
-                        </div>
+                        <button type="button" class="btn btn-primary btn-block">Finalizar</button>
+                        <button type="button" class="btn btn-warning btn-block">Estornar</button>
+                        <button type="button" class="btn btn-danger btn-block">Cancelar</button>
 
                     </div>
-                </div>
+                </div><!-- fim do card-->
+
             </div>
+
+            <div class="col-md-8">
+                <div class="card bg-light mb-3" >
+                    <div class="card-header">Lista de Produtos</div>
+                    <div class="card-body">
+                      <ol>
+                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
+                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
+                      </ol>
+                    </div>
+                    <div class="card-footer">
+                        Total a Pagar: xxxx
+                    </div>
+                  </div>
+            </div><!-- fim do card-->
+
         </div>
-        <!-- Fim do card-->
+    </div>
 
 </body>
 
