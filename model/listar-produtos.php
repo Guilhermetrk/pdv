@@ -1,17 +1,17 @@
 <?php
 
-// $user = "root";
-// $senha = "elaborata";
+require_once "conf.php";
 
-// $con = new PDO('mysql:dbname=pdv;host=localhost;charset=utf8', $user, $senha);
-
-// $sql = "SELECT * FROM produtos";
-
-// $res = $con->query($sql);
-
-// $produtos = $res->fetchAll(PDO::FETCH_ASSOC);
+$con = new PDO("mysql:dbname=". DB_BASE .";host=". DB_HOST .";charset=utf8", DB_USER, DB_SENHA);
 
 
-// echo json_encode($produtos);
+ $sql = "SELECT * FROM produtos";
+
+ $res = $con->query($sql);
+
+$produtos = $res->fetchAll(PDO::FETCH_ASSOC);
+
+
+ echo json_encode($produtos);
 
 ?>
