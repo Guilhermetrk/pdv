@@ -53,20 +53,20 @@
       </div>
 
       <div class="col-md-2">
-        <a href="#" class="btn btn-success float-right" data-toggle="modal" data-target="#novo-produto">
+        <button class="btn btn-success float-right" id="btn-novo">
           <i class="fas fa-plus"></i>
           Novo
-        </a>
+        </button>
       </div>
 
       <table class="table" id="lista-produtos">
         <thead class="thead-light">
           <tr>
             <th>Id</th>
-            <th>Nome</th>
-            <th>Categoria</th>
-            <th>Preço</th>
-            <th>Ações</th>
+            <th><a href="#" class="btn-ord" coluna="nome" >Nome</a></th>
+            <th><a href="#" class="btn-ord" coluna="categoria" >Categoria</a></th>
+            <th><a href="#" class="btn-ord" coluna="preco" >Preço</a></th>
+            <th>Ações</a></th>
           </tr>
         </thead>
 
@@ -117,6 +117,7 @@
                 A simple danger alert—check it out!
               </div>
 
+              <input type="hidden" id="id" />
 
               <!-- Text input-->
               <div class="form-group">
@@ -168,17 +169,17 @@
                 <div class="">
                   <div class="radio">
                     <label for="sexo-0">
-                      <input type="radio" name="sexo" id="sexo-0" value="Masculino" > Masculino
+                      <input type="radio" name="sexo" id="sexo-0" value="M" > Masculino
                     </label>
                   </div>
                   <div class="radio">
                     <label for="sexo-1">
-                      <input type="radio" name="sexo" id="sexo-1" value="Feminino"> Feminino
+                      <input type="radio" name="sexo" id="sexo-1" value="F"> Feminino
                     </label>
                   </div>
                   <div class="radio">
                     <label for="sexo-2">
-                      <input type="radio" name="sexo" id="sexo-2" value="Unisex"> Unisex
+                      <input type="radio" name="sexo" id="sexo-2" value="U"> Unisex
                     </label>
                   </div>
                   <div class="invalid-feedback">
@@ -205,7 +206,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button  class="btn btn-success" id="salvar-produto">Salvar></button>
+          <button  class="btn btn-success" id="salvar-produto" tipo="novo">Salvar</button>
         </div>
       </div>
     </div>

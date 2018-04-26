@@ -8,7 +8,7 @@ $id = $_GET['id'];
 
 $sql = "DELETE FROM produtos WHERE .`id` = $id";
 
-$res = $con->query($sql);
+$res = $con->exec($sql);
 
 if ($res === false){
     echo "ocorreu um erro ao deletar o produto";
