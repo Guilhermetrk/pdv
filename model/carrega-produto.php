@@ -8,6 +8,7 @@ $con = new PDO("mysql:dbname=". DB_BASE .";host=". DB_HOST .";charset=utf8", DB_
 
 $sql = "SELECT * FROM produtos WHERE id = $id";
 
+
 $res = $con->query($sql);
 
 $produtos = $res->fetchAll(PDO::FETCH_ASSOC);

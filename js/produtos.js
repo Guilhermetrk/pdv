@@ -85,7 +85,10 @@ $(function () {
         $("#novo-produto").modal('show');     
         $('input[tupe=text]').val('');
         $('select').val('0');
-        $('input[type=radio]:checked').removePro('checked', false)
+        $('input[type=radio]:checked').prop('checked', false);
+        $("#salvar-produto").attr('tipo', 'novo');
+        
+
     }); // fim do btn-novo
 
     $('.btn-ord').click(function(){

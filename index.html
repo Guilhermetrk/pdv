@@ -5,11 +5,41 @@
     <meta charset="utf8" />
 
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="web-fonts/css/fontawesome-all.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+
+    <script type="text/javascript" src="js/pdv.js"></script>
 
     <style>
-     .principal{
-        margin-top: 20px;
-     }
+        .principal {
+            margin-top: 20px;
+        }
+
+        #btn-codigo {
+            text-align: right;
+        }
+
+        .icone-alert {
+            color: gold;
+            font-size: xx-large;
+        }
+
+        .produto-preco {
+            float: right;
+
+        }
+
+        #lista-produtos {
+            font-family: monospace;
+        }
+
+        .total-pagar {
+            float: right;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -28,52 +58,99 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                
+
             </ul>
-            
+
         </div>
     </nav>
 
     <div class="container principal">
         <div class="row">
             <div class="col-md-4">
-                
-                <div class="card">                    
+
+                <div class="card">
                     <div class="card-body">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text" id="basic-addon1">#</span>
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="fas fa-barcode"></i>
+                                </span>
                             </div>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" id="btn-codigo">
                             <div class="input-group-append">
-                                <button class="btn btn-info">+</button>
+                                <button class="btn btn-info" id="btn-add-produto">+</button>
                             </div>
-                        </div> <!-- fim do input-->
+                        </div>
+                        <!-- fim do input-->
 
-                        <button type="button" class="btn btn-primary btn-block">Finalizar</button>
+                        <button type="button" class="btn btn-primary btn-block" id="btn-finalizar">Finalizar [F4]</button>
                         <button type="button" class="btn btn-warning btn-block">Estornar</button>
                         <button type="button" class="btn btn-danger btn-block">Cancelar</button>
 
                     </div>
-                </div><!-- fim do card-->
+                </div>
+                <!-- fim do card-->
 
             </div>
 
             <div class="col-md-8">
-                <div class="card bg-light mb-3" >
+                <div class="card bg-light mb-3">
                     <div class="card-header">Lista de Produtos</div>
                     <div class="card-body">
-                      <ol>
-                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
-                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
-                      </ol>
+                        <ol id="lista-produtos">
+
+                        </ol>
                     </div>
                     <div class="card-footer">
-                        Total a Pagar: xxxx
+                        Total a Pagar:
+                        <span class="total-pagar">R$ 0,00</span>
                     </div>
-                  </div>
-            </div><!-- fim do card-->
+                </div>
+            </div>
+            <!-- fim do card-->
 
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-alerta">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Atenção</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <i class="fas fa-exclamation-triangle icone-alert"></i>
+                    Esse produto não está cadastrado
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-finalizar">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <i class="fas fa-exclamation-triangle icone-alert"></i>
+                    Deseja encerrar a compra?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" id="btn-gravar-compra">Sim</button>
+                </div>
+            </div>
         </div>
     </div>
 

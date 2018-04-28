@@ -6,16 +6,16 @@ $con = new PDO("mysql:dbname=". DB_BASE .";host=". DB_HOST .";charset=utf8", DB_
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM produtos WHERE .`id` = $id";
+$sql = "DELETE FROM produtos WHERE id = $id";
 
 $res = $con->exec($sql);
 
-if ($res === false){
+if  ($res === false){
     echo "ocorreu um erro ao deletar o produto";
 
 } else {
     echo "ok";
-
+    
 }
 
 header("Location: /produtos.html");
